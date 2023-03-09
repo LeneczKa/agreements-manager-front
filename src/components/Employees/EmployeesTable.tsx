@@ -2,9 +2,9 @@ import React from 'react';
 import {EmployeeEntity} from 'types';
 import {EmployeeTableRow} from "./EmployeeTableRow";
 
-
 interface Props {
     employees: EmployeeEntity[];
+
 }
 
 export const EmployeesTable = (props: Props) => {
@@ -20,7 +20,7 @@ export const EmployeesTable = (props: Props) => {
             <tbody>
             {
                 props.employees.map(employee => (
-                    <EmployeeTableRow employee={employee} key={employee.id}/>
+                    <EmployeeTableRow employee={employee} key={employee.id} />
                 ))
             }
             </tbody>

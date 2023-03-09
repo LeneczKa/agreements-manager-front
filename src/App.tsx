@@ -1,10 +1,21 @@
 import React from 'react';
 import './App.css'
-import {EmployeesList} from "./components/EmployeesList";
+
+import {Route, Routes} from "react-router-dom";
+import { Header } from './components/Header/Header';
+import {EmployeesListView} from "./views/EmployeesListView";
+import {AgreementsListView} from "./views/AgreementsListView";
+
 
 export const App = () => {
     return (
-      <EmployeesList/>
+      <>
+          <Header/>
+          <Routes>
+              <Route path="/employee" element={<EmployeesListView/>}/>
+              <Route path="/agreement" element={<AgreementsListView/>}/>
+          </Routes>
+      </>
     );
 };
 
