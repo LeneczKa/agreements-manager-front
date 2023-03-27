@@ -1,7 +1,10 @@
 import React, {FormEvent, useState} from 'react';
 import {EmployeeEntity} from 'types';
-import {Spinner} from "../../common/Spinner";
+import {Spinner} from "../../common/Spinner/Spinner";
+import {capitalizeFirstLowerCaseRest} from "../../utility/common-functions";
 
+import "./EmployeesList.scss"
+import '../AddEmployee/AddEmployee.scss'
 interface Props {
     employee: EmployeeEntity;
 }
@@ -58,54 +61,66 @@ export const EmployeeTableRow = (props: Props) => {
         return (
             <tr>
                 <td>
-                    {props.employee.firstName}
+                    {capitalizeFirstLowerCaseRest(props.employee.firstName)}
                 </td>
                 <td>
-                    {props.employee.lastName}
+                    {capitalizeFirstLowerCaseRest(props.employee.lastName)}
                 </td>
                 <td>
-                    {props.employee.email}
+                    {(props.employee.email).toLowerCase()}
                 </td>
                 <td>
                     {props.employee.phone}
                 </td>
                 <td>
-                    <button onClick={() => setIsEditing(true)}>✏EDIT</button>
+                    <button className='btn-small' onClick={() => setIsEditing(true)}>🖊</button>
+                    <button className='btn-small'>🗑</button>
                 </td>
             </tr>
         )
     } else {
         return <tr>
             <td>
-                <input type='text'
-                       name='first name'
+                <input className='form-input'
+                    type='text'
+                       required
+                       pattern="^[a-zA-Z]{3,20}$"
+                       name='firstName'
                        value={form.firstName}
                        onChange={e => updateForm('firstName', e.target.value)}
                 />
             </td>
             <td>
-                <input type='text'
-                       name='last name'
+                <input className='form-input'
+                    type='text'
+                       required
+                       pattern="^[a-zA-Z]{2,30}$"
+                       name='lastName'
                        value={form.lastName}
                        onChange={e => updateForm('lastName', e.target.value)}
                 />
             </td>
             <td>
-                <input type='text'
+                <input className='form-input'
+                       type='email'
+                       required
                        name='email'
                        value={form.email}
                        onChange={e => updateForm('email', e.target.value)}
                 />
             </td>
             <td>
-                <input type='text'
+                <input className='form-input'
+                       type='text'
+                       required
+                       pattern="^[0-9]{9}$"
                        name='phone'
                        value={form.phone}
                        onChange={e => updateForm('phone', e.target.value)}
                 />
             </td>
             <td>
-                <button type="submit" onClick={sendForm}>Zapisz</button>
+                <button className='btn-small' type="submit" onClick={sendForm}>Zapisz</button>
             </td>
         </tr>
     }

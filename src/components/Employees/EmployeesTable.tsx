@@ -1,6 +1,7 @@
 import React from 'react';
 import {EmployeeEntity} from 'types';
 import {EmployeeTableRow} from "./EmployeeTableRow";
+import "./EmployeesList.scss"
 
 interface Props {
     employees: EmployeeEntity[];
@@ -8,13 +9,14 @@ interface Props {
 }
 
 export const EmployeesTable = (props: Props) => {
-        return (<table>
+        return (<table className='user-table'>
             <thead>
             <tr>
                 <th>Imię</th>
                 <th>Nazwisko</th>
                 <th>E-mail</th>
                 <th>Telefon</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
