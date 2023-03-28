@@ -27,8 +27,8 @@ export const AgreementsList = () => {
         <Link to="/agreement/add" className='links'>Dodaj zlecenie</Link>
         {
             agreementsList.map(agreement => (
-            <AgreementsListOneElement agreement={agreement} key={agreement.id}/>
-        ))
+                <AgreementsListOneElement agreement={agreement} key={agreement.id}/>
+            ))
         }
     </div>
 }
