@@ -12,7 +12,7 @@ export const AddAgreement = () => {
         institutionStreet: '',
         institutionZipCode: '',
         personForContact: '',
-        personForContactEmail: '',
+        personForContactMail: '',
         personForContactPhone: '',
         responseDate: '',
         offerSendingDate: '',
@@ -63,7 +63,7 @@ export const AddAgreement = () => {
             institutionStreet: '',
             institutionZipCode: '',
             personForContact: '',
-            personForContactEmail: '',
+            personForContactMail: '',
             personForContactPhone: '',
             responseDate: '',
             offerSendingDate: '',
@@ -139,11 +139,11 @@ export const AddAgreement = () => {
                        onChange={e => updateForm('personForContact', e.target.value)}
                 />
                 <input type='email'
-                       name='personForContactEmail'
+                       name='personForContactMail'
                        required
                        placeholder='e-mail'
-                       value={form.personForContactEmail}
-                       onChange={e => updateForm('personForContactEmail', e.target.value)}
+                       value={form.personForContactMail}
+                       onChange={e => updateForm('personForContactMail', e.target.value)}
                 />
                 <input type='text'
                        name='personForContactPhone'
@@ -214,8 +214,8 @@ export const AddAgreement = () => {
             </div>
             <div>
                 <label>Osoby realizujące zlecenie:</label>
-                <EmployeeSelect selectedId={form.employeeId1}/>
-                <EmployeeSelect selectedId={form.employeeId2}/>
+                <EmployeeSelect selectedId={form.employeeId1} onSelect={(selectedId) => updateForm('employeeId1', selectedId)}/>
+                <EmployeeSelect selectedId={form.employeeId2} onSelect={(selectedId) => updateForm('employeeId2', selectedId)}/>
             </div>
             <div>
                 <label>Numer raportu:</label>
