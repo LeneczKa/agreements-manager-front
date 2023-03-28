@@ -1,8 +1,9 @@
-import React, {FormEvent, useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import {EmployeeEntity} from "types";
 
 interface Props {
     selectedId: string;
+    onSelect:(selectedId:string)=>void
 }
 export const EmployeeSelect = (props: Props) => {
     const [selected, setSelected] = useState<string>(props.selectedId === null ? '' : props.selectedId);
@@ -19,7 +20,8 @@ export const EmployeeSelect = (props: Props) => {
         <select
             value={selected}
             onChange={e => {
-                setSelected(e.target.value)}
+                setSelected(e.target.value)
+                props.onSelect(e.target.value)}
         }
         >
             <option>- wybierz -</option>
