@@ -2,13 +2,14 @@ import React from 'react';
 import {SimpleAgreementEntity} from 'types';
 
 import './AgreementsListOneItem.scss'
+import {Link} from "react-router-dom";
 
 interface Props {
     agreement: SimpleAgreementEntity;
 }
 
 export const AgreementsListOneElement = (props: Props) => {
-    return (
+    return (<Link to={`/agreement/${props.agreement.id}`}>
         <ul className="agreement-box">
             <div className='agreement-address-box'>
                 <div>
@@ -39,5 +40,6 @@ export const AgreementsListOneElement = (props: Props) => {
             </div>
             <div>progress bar</div>
         </ul>
+        </Link>
     )
 }

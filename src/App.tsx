@@ -3,11 +3,10 @@ import {Route, Routes} from "react-router-dom";
 import {Header} from './components/Header/Header';
 import {EmployeesListView} from "./views/EmployeesListView";
 import {AgreementsListView} from "./views/AgreementsListView";
-import {SearchContext} from "./contexts/search.context";
+import {AddAgreementView} from "./views/AddAgreementView";
+import {SingleAgreementView} from "./views/SingleAgreementView";
 
 import './App.css'
-import {AddAgreementView} from "./views/AddAgreementView";
-
 export const App = () => {
     // const [search, setSearch] = useState('');
     return (
@@ -17,6 +16,7 @@ export const App = () => {
                     <Route path="/employee" element={<EmployeesListView/>}/>
                     <Route path="/agreement" element={<AgreementsListView/>}/>
                     <Route path="/agreement/add" element={<AddAgreementView/>}/>
+                    <Route path="/agreement/:idOfAgreement" element={<SingleAgreementView/>}/>
                 </Routes>
         </div>
     );
