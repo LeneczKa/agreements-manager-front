@@ -2,7 +2,7 @@
   margin: 0 auto;
   position: relative;
   top: 50px;
-  width: 500px;
+  width: 600px;
 
   .form-title {
     padding: 5px;
@@ -29,9 +29,28 @@
       }
 
       input {
-        display: inline-block;
-        width: fit-content;
+        border: 1px solid cadetblue;
+        margin-left: 5px;
       }
+
+      input:focus {
+        border: 2px solid cadetblue;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 0.8rem;
+      }
+    }
+
+    .regular-input{
+      width: 25%;
+    }
+    .mid-input {
+      width: 45%;
+    }
+    .big-input {
+      width: 95%;
     }
 
     h2 {
@@ -53,6 +72,23 @@
         margin-right: 15px;
       }
     }
+  }
+
+  .notes-box {
+    textarea {
+      margin-top: 5px;
+      width: 100%;
+      height: content-box;
+      border: 1px solid cadetblue;
+    }
+    label {
+      font-weight: bolder;
+    }
+  }
+  button {
+    margin-top: 5px;
+    width: 100%;
+    left: 0;
   }
 }
 

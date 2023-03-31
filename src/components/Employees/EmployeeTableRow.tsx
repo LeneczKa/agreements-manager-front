@@ -3,8 +3,9 @@ import {EmployeeEntity} from 'types';
 import {Spinner} from "../../common/Spinner/Spinner";
 import {capitalizeFirstLowerCaseRest} from "../../utility/common-functions";
 
-import "./EmployeesList.scss"
-import '../AddEmployee/AddEmployee.scss'
+import "./EmployeesList.scss";
+import '../AddEmployee/AddEmployee.scss';
+
 interface Props {
     employee: EmployeeEntity;
 }
@@ -42,9 +43,8 @@ export const EmployeeTableRow = (props: Props) => {
                     ...form,
                 }),
             });
-
             const data: EmployeeEntity[] = await res.json();
-            console.log(data);
+            // console.log(data);
 
         } finally {
             setLoading(false)
@@ -82,7 +82,7 @@ export const EmployeeTableRow = (props: Props) => {
         return <tr>
             <td>
                 <input className='form-input'
-                    type='text'
+                       type='text'
                        required
                        pattern="^[a-zA-Z]{3,20}$"
                        name='firstName'
@@ -92,7 +92,7 @@ export const EmployeeTableRow = (props: Props) => {
             </td>
             <td>
                 <input className='form-input'
-                    type='text'
+                       type='text'
                        required
                        pattern="^[a-zA-Z]{2,30}$"
                        name='lastName'

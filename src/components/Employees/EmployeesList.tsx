@@ -4,8 +4,9 @@ import {Spinner} from "../../common/Spinner/Spinner";
 import {EmployeesTable} from "./EmployeesTable";
 import {SearchContext} from "../../contexts/search.context";
 
-import './EmployeesList.scss'
-import '../AddEmployee/AddEmployee.scss'
+import './EmployeesList.scss';
+import '../AddEmployee/AddEmployee.scss';
+
 export const EmployeesList = () => {
     const {search} = useContext(SearchContext)
     const [employeesList, setEmployeesList] = useState<EmployeeEntity[] | []>([]);

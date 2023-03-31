@@ -1,15 +1,15 @@
 import React from 'react';
 import {EmployeeEntity} from 'types';
 import {EmployeeTableRow} from "./EmployeeTableRow";
-import "./EmployeesList.scss"
+
+import "./EmployeesList.scss";
 
 interface Props {
     employees: EmployeeEntity[];
-
 }
 
 export const EmployeesTable = (props: Props) => {
-        return (<table className='user-table'>
+    return (<table className='user-table'>
             <thead>
             <tr>
                 <th>Imię</th>
@@ -22,7 +22,7 @@ export const EmployeesTable = (props: Props) => {
             <tbody>
             {
                 props.employees.map(employee => (
-                    <EmployeeTableRow employee={employee} key={employee.id} />
+                    <EmployeeTableRow employee={employee} key={employee.id}/>
                 ))
             }
             </tbody>

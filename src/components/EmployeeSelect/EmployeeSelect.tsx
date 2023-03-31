@@ -1,6 +1,8 @@
 import React, { useEffect, useState} from "react";
 import {EmployeeEntity} from "types";
 
+import './EmployeeSelect.scss'
+
 interface Props {
     selectedId: string;
     onSelect:(selectedId:string)=>void

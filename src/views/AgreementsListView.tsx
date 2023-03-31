@@ -3,7 +3,7 @@ import {AgreementsList} from "../components/Agreements/AgreementsList";
 import {SearchContext} from "../contexts/search.context";
 import {HeaderOfList} from "../components/HeadOfList/HeaderOfList";
 
-import './bodyComponentWrapper.scss'
+import '../styles/bodyComponentWrapper.scss'
 export const AgreementsListView = () => {
     const [search, setSearch] = useState<string>('');
 
@@ -12,5 +12,5 @@ export const AgreementsListView = () => {
             <HeaderOfList title='Lista zleceń'/>
             <AgreementsList/>
         </SearchContext.Provider>
-    </div>;
+    </div>
 };

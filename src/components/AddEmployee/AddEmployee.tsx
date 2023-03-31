@@ -39,13 +39,12 @@ export const AddEmployee = () => {
             });
             const data: EmployeeEntity = await res.json();
 
-            setResultInfo(`${capitalizeFirstLowerCaseRest(data.firstName)} ${capitalizeFirstLowerCaseRest(data.lastName)} został/-a dodany/-a do listy pracowników z ID ${data.id}.`);
+            setResultInfo(`${capitalizeFirstLowerCaseRest(data.firstName)} ${capitalizeFirstLowerCaseRest(data.lastName)} został/-a dodany/-a do listy pracowników.`);
 
         } finally {
             setLoading(false);
         }
 
-        //czyszczenie inputa po odświezniu strony
         setForm({
             firstName: '',
             lastName: '',
@@ -58,9 +57,9 @@ export const AddEmployee = () => {
         return <Spinner/>
     }
     if (resultInfo !== null) {
-        return <div className='adding-result-info'>
+        return <div className='adding-result-info-employee'>
             <p><strong>{resultInfo}</strong></p>
-            <button className='btn-insertion' onClick={() => setResultInfo(null)}>Dodaj kolejnego pracownika</button>
+            <button className='btn-insertion' onClick={() => setResultInfo(null)}>Wróć do listy</button>
         </div>;
     }
 
@@ -74,7 +73,7 @@ export const AddEmployee = () => {
                        name='firstName'
                        required
                        placeholder='Dodaj imię'
-                       pattern="^[a-zA-Z\-]{3,20}$"
+                       pattern="^[a-zA-ZąęśćżźńłóĄĘŚĆŻŹŃŁÓ\-]{3,20}$"
                        title='Imię musi mieć od 3 do 20 znaków'
                        value={form.firstName}
                        onChange={e => updateForm('firstName', e.target.value)}
@@ -87,7 +86,7 @@ export const AddEmployee = () => {
                        name='lastName'
                        required
                        placeholder='Dodaj nazwisko'
-                       pattern="^[a-zA-Z\-]{2,30}$"
+                       pattern="^[a-zA-ZąęśćżźńłóĄĘŚĆŻŹŃŁÓ\-]{2,30}$"
                        title='Nazwisko musi mieć od 2 do 30 znaków'
                        value={form.lastName}
                        onChange={e => updateForm('lastName', e.target.value)}

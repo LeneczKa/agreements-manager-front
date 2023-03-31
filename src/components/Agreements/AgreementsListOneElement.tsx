@@ -1,8 +1,8 @@
 import React from 'react';
 import {SimpleAgreementEntity} from 'types';
-
-import './AgreementsListOneItem.scss'
 import {Link} from "react-router-dom";
+
+import './AgreementsListOneItem.scss';
 
 interface Props {
     agreement: SimpleAgreementEntity;
@@ -38,7 +38,9 @@ export const AgreementsListOneElement = (props: Props) => {
                     <p>{props.agreement.reportId}</p>
                 </div>
             </div>
-            <div>progress bar</div>
+            <div className='progress-bar'>
+                <p>...</p>
+            </div>
         </ul>
         </Link>
     )

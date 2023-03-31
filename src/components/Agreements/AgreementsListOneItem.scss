@@ -7,6 +7,8 @@
   border: 2px solid cadetblue;
   box-shadow: 2px 1px #bbbbbb;
   overflow-wrap: break-word;
+  color: cadetblue;
+  text-decoration: none;
 
   .agreement-address-box {
     border-bottom: 1px solid cadetblue;
@@ -31,6 +33,12 @@
 
   label {
     font-size: 0.75rem;
+  }
+  .progress-bar {
+    p{
+      text-decoration: none;
+      color: cadetblue;
+    }
   }
 }
 

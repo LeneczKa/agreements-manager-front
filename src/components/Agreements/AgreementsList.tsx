@@ -3,9 +3,9 @@ import {SimpleAgreementEntity} from "types";
 import {Spinner} from "../../common/Spinner/Spinner";
 import {SearchContext} from "../../contexts/search.context";
 import {AgreementsListOneElement} from "./AgreementsListOneElement";
+import {Link} from "react-router-dom";
 
 import './AgreementList.scss'
-import {Link} from "react-router-dom";
 
 export const AgreementsList = () => {
     const {search} = useContext(SearchContext)
