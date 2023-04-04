@@ -29,6 +29,7 @@ export const AddAgreement = () => {
         invoiceAmount: 0,
         invoiceDate: '',
         notes: '',
+        count: 0,
     })
     const [loading, setLoading] = useState<boolean>(false);
     const [resultInfo, setResultInfo] = useState<string | null>(null)

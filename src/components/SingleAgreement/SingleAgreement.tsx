@@ -12,7 +12,7 @@ export const SingleAgreement = () => {
         (async () => {
             const res = await fetch(`http://localhost:3001/agreement/${idOfAgreement}`);
             const data = await res.json();
-            setAgreement(data);
+            setAgreement(data.agreement);
         })();
     }, [idOfAgreement])
 
@@ -78,6 +78,14 @@ export const SingleAgreement = () => {
                     <tr>
                         <td>Data realizacji zlecenia:</td>
                         <td> {agreement.executionDate}</td>
+                    </tr>
+                    <tr>
+                        <td>Numer raportu:</td>
+                        <td> {agreement.reportId}</td>
+                    </tr>
+                    <tr>
+                        <td>Data sporządzenia raportu:</td>
+                        <td> {agreement.reportDate}</td>
                     </tr>
                 </table>
             </div>

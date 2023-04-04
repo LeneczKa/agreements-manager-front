@@ -26,7 +26,7 @@ export const EmployeeSelect = (props: Props) => {
                 props.onSelect(e.target.value)}
         }
         >
-            <option>- wybierz -</option>
+            <option>-wybierz-</option>
             {employees.map(employee => (
                 <option
                     value={employee.id}

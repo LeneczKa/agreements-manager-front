@@ -1,8 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-import agreementIcon from "../../pictures/agreement.png"
-
 import './Header.scss'
 
 export const Header = () => {
@@ -14,7 +12,6 @@ export const Header = () => {
         <h1>agreement manager</h1>
         <div className='menu-links-container'>
             <NavLink className='menu-link' style={colorOfLink} to="/agreement">
-                {/*<img className='menu-icon' src={agreementIcon}/>*/}
                 zlecenia
             </NavLink>
             <NavLink className='menu-link' style={colorOfLink} to="/employee">pracownicy</NavLink>

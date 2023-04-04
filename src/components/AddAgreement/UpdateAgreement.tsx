@@ -29,17 +29,17 @@ export const UpdateAgreement = () => {
         invoiceAmount: 0,
         invoiceDate: '',
         notes: '',
+        count: 0,
     })
     const [loading, setLoading] = useState<boolean>(false);
     const [resultInfo, setResultInfo] = useState<string | null>(null)
     const {idOfAgreement} = useParams();
 
-    useEffect( () => {
+    useEffect(() => {
         (async () => {
             const res = await fetch(`http://localhost:3001/agreement/${idOfAgreement}`);
             const data = await res.json();
-            console.log(data)
-            setForm(data);
+            setForm(data.agreement);
         })();
     }, [])
 
@@ -53,7 +53,7 @@ export const UpdateAgreement = () => {
         e.preventDefault();
 
         setLoading(true);
-
+        // const workMode = isUpdated ? 'PATCH' : 'POST';
         try {
             const res = await fetch(`http://localhost:3001/agreement/update/${idOfAgreement}`, {
                 method: 'PATCH',
@@ -93,6 +93,7 @@ export const UpdateAgreement = () => {
             invoiceAmount: 0,
             invoiceDate: '',
             notes: '',
+            count: 0,
         })
     };
 
@@ -114,7 +115,7 @@ export const UpdateAgreement = () => {
                 <div className='input-box'>
                     <label>Nazwa:</label>
                     <input className='big-input'
-                        type='text'
+                           type='text'
                            name='institutionName'
                            required
                            placeholder='Nazwa'
@@ -133,7 +134,7 @@ export const UpdateAgreement = () => {
                            onChange={e => updateForm('institutionCity', e.target.value)}
                     />
                     <input className='mid-input'
-                        type='text'
+                           type='text'
                            name='institutionStreet'
                            required
                            placeholder='ulica, nr'
@@ -141,7 +142,7 @@ export const UpdateAgreement = () => {
                            onChange={e => updateForm('institutionStreet', e.target.value)}
                     />
                     <input className='regular-input'
-                        type='text'
+                           type='text'
                            name='institutionZipCode'
                            required
                            placeholder='kod pocztowy'
@@ -152,7 +153,7 @@ export const UpdateAgreement = () => {
                 <div className='input-box'>
                     <label>Osoba do kontaktu:</label>
                     <input className='mid-input'
-                        type='text'
+                           type='text'
                            name='personForContact'
                            required
                            pattern="^[a-zA-ZąęśćżźńĄĘŚĆŻŹŃ\- ]{2,50}$"
@@ -162,7 +163,7 @@ export const UpdateAgreement = () => {
                            onChange={e => updateForm('personForContact', e.target.value)}
                     />
                     <input className='regular-input'
-                        type='email'
+                           type='email'
                            name='personForContactMail'
                            required
                            placeholder='e-mail'
@@ -170,7 +171,7 @@ export const UpdateAgreement = () => {
                            onChange={e => updateForm('personForContactMail', e.target.value)}
                     />
                     <input className='regular-input'
-                        type='text'
+                           type='text'
                            name='personForContactPhone'
                            placeholder='nr telefonu'
                            value={form.personForContactPhone}
@@ -199,7 +200,7 @@ export const UpdateAgreement = () => {
                 <div className='input-box'>
                     <label>Numer umowy:</label>
                     <input className='mid-input'
-                        type='text'
+                           type='text'
                            name='agreementNo'
                            placeholder='-- nr umowy --'
                            value={form.agreementNo}
@@ -209,7 +210,7 @@ export const UpdateAgreement = () => {
                 <div className='input-box'>
                     <label>Wartość umowy:</label>
                     <input className='regular-input'
-                        type='number'
+                           type='number'
                            name='invoiceAmount'
                            value={form.invoiceAmount}
                            onChange={e => updateForm('invoiceAmount', Number(e.target.value))}
@@ -250,7 +251,7 @@ export const UpdateAgreement = () => {
                 <div className='input-box'>
                     <label>Numer raportu:</label>
                     <input className='mid-input'
-                        type='text'
+                           type='text'
                            name='reportId'
                            placeholder='-- nr raportu --'
                            value={form.reportId}
