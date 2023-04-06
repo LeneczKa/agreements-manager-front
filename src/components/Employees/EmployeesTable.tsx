@@ -1,6 +1,7 @@
 import React from 'react';
 import {EmployeeEntity} from 'types';
 import {EmployeeTableRow} from "./EmployeeTableRow";
+import {Link} from "react-router-dom";
 
 import "./EmployeesList.scss";
 
@@ -16,7 +17,7 @@ export const EmployeesTable = (props: Props) => {
                 <th>Nazwisko</th>
                 <th>E-mail</th>
                 <th>Telefon</th>
-                <th></th>
+                <th><Link to="/employee/archive" className='archive-link'>Archiwum</Link></th>
             </tr>
             </thead>
             <tbody>

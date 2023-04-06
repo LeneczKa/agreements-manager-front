@@ -6,6 +6,7 @@ import {AgreementsListView} from "./views/AgreementsListView";
 import {AddAgreementView} from "./views/AddAgreementView";
 import {SingleAgreementView} from "./views/SingleAgreementView";
 import {UpdateAgreementView} from "./views/UpdateAgreementView";
+import {EmployeesArchiveView} from "./views/EmployeesArchiveView";
 
 import './App.css'
 
@@ -14,6 +15,7 @@ export const App = () => {
                 <Header/>
                 <Routes>
                     <Route path="/employee" element={<EmployeesListView/>}/>
+                    <Route path="/employee/archive" element={<EmployeesArchiveView/>}/>
                     <Route path="/agreement" element={<AgreementsListView/>}/>
                     <Route path="/agreement/add" element={<AddAgreementView/>}/>
                     <Route path="/agreement/:idOfAgreement" element={<SingleAgreementView/>}/>

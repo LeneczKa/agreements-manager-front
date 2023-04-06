@@ -1,4 +1,4 @@
-import React, {FormEvent, useState} from 'react';
+import React, {FormEvent, MouseEventHandler, useState} from 'react';
 import {EmployeeEntity} from 'types';
 import {Spinner} from "../../common/Spinner/Spinner";
 import {capitalizeFirstLowerCaseRest} from "../../utility/common-functions";
@@ -35,7 +35,7 @@ export const EmployeeTableRow = (props: Props) => {
 
         try {
             const res = await fetch(`http://localhost:3001/employee/${props.employee.id}`, {
-                method: 'PUT',
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -44,13 +44,35 @@ export const EmployeeTableRow = (props: Props) => {
                 }),
             });
             const data: EmployeeEntity[] = await res.json();
-            // console.log(data);
 
         } finally {
             setLoading(false)
             setIsEditing(false);
         }
+    }
 
+    const archiveEmployee = async (e: FormEvent) => {
+        e.preventDefault();
+
+        if(!window.confirm(`Czy jesteś pewien, że chcesz przenieść ${props.employee.firstName} ${props.employee.lastName} do archiwum?`)) {
+            return;
+        }
+        const res = await fetch(`http://localhost:3001/employee/${props.employee.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ...form,
+            }),
+        });
+        const data: EmployeeEntity[] = await res.json();
+
+        if ([400, 500].includes(res.status)) {
+            const error = await res.json();
+            alert(`Error occured: ${error.message}`);
+            return;
+        }
     }
 
     if (loading) {
@@ -74,7 +96,7 @@ export const EmployeeTableRow = (props: Props) => {
                 </td>
                 <td>
                     <button className='btn-small' onClick={() => setIsEditing(true)}>🖊</button>
-                    <button className='btn-small'>🗑</button>
+                    <button className='btn-small' onClick={archiveEmployee}>🗑</button>
                 </td>
             </tr>
         )

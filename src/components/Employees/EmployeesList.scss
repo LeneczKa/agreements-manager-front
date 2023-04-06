@@ -41,6 +41,16 @@
     tr:hover {
       background-color: rgb(95, 158, 160, 0.2);
     }
+    .archive-link {
+      text-decoration: none;
+      color: rgb(170 209 210);
+      font-size: smaller;
+      font-weight: normal;
+    }
+    .archive-link:hover {
+      color: white;
+      transition-duration: 0.3s;
+    }
   }
 
   .btn-small {
