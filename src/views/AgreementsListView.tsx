@@ -9,7 +9,7 @@ export const AgreementsListView = () => {
 
     return <div className='body-component-wrapper'>
         <SearchContext.Provider value={{search, setSearch}}>
-            <HeaderOfList title='Lista zleceń'/>
+            <HeaderOfList title='Lista zleceń' searchPlaceholder='Wyszukaj wg Miasta'/>
             <AgreementsList/>
         </SearchContext.Provider>
     </div>

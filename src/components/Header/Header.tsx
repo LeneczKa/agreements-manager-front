@@ -11,10 +11,10 @@ export const Header = () => {
     return <div className='header'>
         <h1>agreement manager</h1>
         <div className='menu-links-container'>
-            <NavLink className='menu-link' style={colorOfLink} to="/agreement">
-                zlecenia
-            </NavLink>
+            <NavLink className='menu-link' style={colorOfLink} to="/">🏠</NavLink>
+            <NavLink className='menu-link' style={colorOfLink} to="/agreement">zlecenia</NavLink>
             <NavLink className='menu-link' style={colorOfLink} to="/employee">pracownicy</NavLink>
+            <NavLink className='menu-link' style={colorOfLink} to="/archive">archiwum</NavLink>
         </div>
     </div>
 }

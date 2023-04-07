@@ -6,22 +6,27 @@ import {AgreementsListView} from "./views/AgreementsListView";
 import {AddAgreementView} from "./views/AddAgreementView";
 import {SingleAgreementView} from "./views/SingleAgreementView";
 import {UpdateAgreementView} from "./views/UpdateAgreementView";
-import {EmployeesArchiveView} from "./views/EmployeesArchiveView";
+import {AgreementArchiveView} from "./views/AgreementArchiveView";
+import {SingleArchiveAgreementView} from "./views/SingleArchiveAgreementView";
+import { NotFoundView } from './views/NotFoundView';
+import {WelcomePageView} from "./views/WelcomePageView";
 
 import './App.css'
 
 export const App = () => {
-    return (<div className='app-container'>
-                <Header/>
-                <Routes>
-                    <Route path="/employee" element={<EmployeesListView/>}/>
-                    <Route path="/employee/archive" element={<EmployeesArchiveView/>}/>
-                    <Route path="/agreement" element={<AgreementsListView/>}/>
-                    <Route path="/agreement/add" element={<AddAgreementView/>}/>
-                    <Route path="/agreement/:idOfAgreement" element={<SingleAgreementView/>}/>
-                    <Route path="/agreement/update/:idOfAgreement" element={<UpdateAgreementView/>}/>
-                </Routes>
-        </div>
-    );
+    return <div className='app-container'>
+        <Header/>
+        <Routes>
+            <Route path="*" element={<NotFoundView/>}/>
+            <Route path="/" element={<WelcomePageView/>}/>
+            <Route path="/employee" element={<EmployeesListView/>}/>
+            <Route path="/agreement" element={<AgreementsListView/>}/>
+            <Route path="/agreement/add" element={<AddAgreementView/>}/>
+            <Route path="/agreement/:idOfAgreement" element={<SingleAgreementView/>}/>
+            <Route path="/agreement/update/:idOfAgreement" element={<UpdateAgreementView/>}/>
+            <Route path="/archive" element={<AgreementArchiveView/>}/>
+            <Route path="/archive/:idOfAgreement" element={<SingleArchiveAgreementView/>}/>
+        </Routes>
+    </div>
 };
 

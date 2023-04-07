@@ -5,6 +5,7 @@ import './HeadOfList.scss'
 import'../../styles/InsertionBtn.scss'
 interface Props {
     title: string;
+    searchPlaceholder: string;
 }
 
 export const HeaderOfList = (props: Props) => {
@@ -25,7 +26,7 @@ export const HeaderOfList = (props: Props) => {
                 <input
                     className='form-input'
                     type="text"
-                    placeholder='Wyszukaj...'
+                    placeholder={props.searchPlaceholder}
                     value={inputVal}
                     onChange={e => setInputVal(e.target.value)}
                 />

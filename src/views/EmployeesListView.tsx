@@ -11,7 +11,7 @@ export const EmployeesListView = () => {
     return <div className='body-component-wrapper'>
         <SearchContext.Provider value={{search, setSearch}}>
             <AddEmployee/>
-            <HeaderOfList title='Lista pracowników'/>
+            <HeaderOfList title='Lista pracowników' searchPlaceholder='Wyszukaj wg Nazwiska'/>
             <EmployeesList/>
         </SearchContext.Provider>
     </div>
