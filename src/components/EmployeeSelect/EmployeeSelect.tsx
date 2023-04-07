@@ -18,6 +18,7 @@ export const EmployeeSelect = (props: Props) => {
             setEmployees(employees)
         })();
     }, []);
+
     return (
         <select
             value={selected}
@@ -26,7 +27,7 @@ export const EmployeeSelect = (props: Props) => {
                 props.onSelect(e.target.value)}
         }
         >
-            <option>-wybierz-</option>
+            <option>{props.selectedId === null ? '-wybierz-' : props.selectedId}</option>
             {employees.map(employee => (
                 <option
                     value={employee.id}
