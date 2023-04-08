@@ -1,0 +1,21 @@
+.btn-insertion {
+  position: relative;
+  left: 80%;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px;
+  width: 20%;
+  border: none;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: cadetblue;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-insertion:hover {
+  background-color: rgb(95, 158, 160, 0.2);
+  border-radius: 3px;
+  transition-duration: 0.3s;
+}

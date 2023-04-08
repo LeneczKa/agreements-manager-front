@@ -1,0 +1,46 @@
+.header {
+  position: fixed;
+  top:0;
+  width: 95vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-bottom: 2px solid cadetblue;
+  background-color: white;
+  height: 50px;
+
+  h1 {
+    padding-top: 2px;
+    padding-right: 15px;
+    text-align: right;
+    color: cadetblue;
+    display: block;
+    font-size: 15px;
+  }
+
+  .menu-links-container {
+    position: relative;
+    left: 20px;
+  }
+
+  .menu-link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 20px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: cadetblue;
+    font-weight: bold;
+  }
+
+  .menu-icon {
+    margin-right: 5px;
+    width: 15px;
+    color: cadetblue;
+  }
+
+  .menu-link:hover {
+    background-color: rgb(95, 158, 160, 0.2);
+    transition-duration: 0.3s;
+  }
+}

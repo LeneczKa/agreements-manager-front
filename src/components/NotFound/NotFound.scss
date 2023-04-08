@@ -1,0 +1,25 @@
+.not-found-container {
+  position: relative;
+  top: 100px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .rescue-link {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: cadetblue;
+    border-radius: 3px;
+    color: white;
+  }
+  .rescue-link:hover {
+    background-color: rgb(95, 158, 160, 0.6);
+    transition-duration: 0.3s;
+  }
+}

@@ -1,0 +1,51 @@
+.one-agreement-link{
+  text-decoration: none;
+  color: cadetblue;
+}
+
+.agreement-box {
+  position: relative;
+  top: 10px;
+  display: block;
+  margin: 5px 0px;
+  padding: 5px;
+  border: 2px solid cadetblue;
+  box-shadow: 2px 1px #bbbbbb;
+  overflow-wrap: break-word;
+
+  .agreement-address-box {
+    border-bottom: 1px solid cadetblue;
+
+    div {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  .agreement-data-box {
+
+    div {
+      display: inline-block;
+      width: 25%;
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  label {
+    font-size: 0.75rem;
+  }
+
+  .progress-bar {
+    p {
+      text-decoration: none;
+      color: cadetblue;
+    }
+  }
+}
+
+.agreement-box:hover {
+  background-color: rgb(95, 158, 160, 0.2);
+}

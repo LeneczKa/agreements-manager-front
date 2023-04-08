@@ -1,0 +1,105 @@
+.add-agreement-container {
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+  width: 600px;
+
+  .form-title {
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .form-part, .form-part-two {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid cadetblue;
+    border-radius: 2px;
+    box-shadow: 2px 1px #bbbbbb;
+
+    .input-box {
+      display: block;
+      margin-bottom: 10px;
+
+      label {
+        display: block;
+        width: content-box;
+      }
+
+      input {
+        border: 1px solid cadetblue;
+        margin-left: 5px;
+      }
+
+      input:focus {
+        border: 2px solid cadetblue;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 0.8rem;
+      }
+    }
+
+    .regular-input{
+      width: 25%;
+    }
+    .mid-input {
+      width: 45%;
+    }
+    .big-input {
+      width: 95%;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    button {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  .form-part-two {
+    .input-box {
+      label {
+        display: inline-block;
+        width: content-box;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .notes-box {
+    textarea {
+      margin-top: 5px;
+      width: 100%;
+      height: content-box;
+      border: 1px solid cadetblue;
+    }
+    label {
+      font-weight: bolder;
+    }
+  }
+  button {
+    margin-top: 5px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.adding-result-info {
+  position: relative;
+  top: 100px;
+  width: 500px;
+  margin: 0 auto;
+
+  button {
+    width: 100%;
+    left: 0;
+  }
+}
