@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './ProgressBar.scss'
+
 interface Props {
     count: number;
     bgcolour: string;

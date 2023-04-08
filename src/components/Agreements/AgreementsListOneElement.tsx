@@ -3,9 +3,10 @@ import {SimpleAgreementEntity} from 'types';
 import {Link} from "react-router-dom";
 import {ProgressBar} from "../ProgressBar/ProgressBar";
 import {ArchiveBtn} from '../ArchiveBtn/ArchiveBtn';
+import {DeleteBtn} from "../DeleteBtn/DeleteBtn";
+import {apiURL} from "../../config/api";
 
 import './AgreementsListOneItem.scss';
-import {DeleteBtn} from "../DeleteBtn/DeleteBtn";
 
 interface Props {
     agreement: SimpleAgreementEntity,
@@ -16,7 +17,7 @@ export const AgreementsListOneElement = (props: Props) => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/agreement/${props.agreement.id}`);
+            const res = await fetch(`${apiURL}/agreement/${props.agreement.id}`);
             const data = await res.json();
             setSuccess(data.amountOfSuccess)
         })();

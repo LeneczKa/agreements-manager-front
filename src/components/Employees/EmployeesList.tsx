@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {EmployeeEntity} from 'types';
 import {Spinner} from "../../common/Spinner/Spinner";
 import {EmployeesTable} from "./EmployeesTable";
+import {apiURL} from "../../config/api";
 import {SearchContext} from "../../contexts/search.context";
 
 import './EmployeesList.scss';
@@ -13,7 +14,7 @@ export const EmployeesList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/employee/search/${search}`)
+            const res = await fetch(`${apiURL}/employee/search/${search}`)
             const employeesList = await res.json();
             setEmployeesList(employeesList);
         })();

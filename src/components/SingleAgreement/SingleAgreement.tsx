@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {AgreementEntity} from 'types';
 import {Link, useParams} from "react-router-dom";
 import {SingleAgreementTable} from "./SingleAgreementTable";
+import {apiURL} from "../../config/api";
 
 import './SingleAgreement.scss';
 
@@ -11,7 +12,7 @@ export const SingleAgreement = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/agreement/${idOfAgreement}`);
+            const res = await fetch(`${apiURL}/agreement/${idOfAgreement}`);
             const data = await res.json();
             setAgreement(data.agreement);
         })();

@@ -1,18 +1,17 @@
-import React from "react";
+import React, {FormEvent} from "react";
 import {Link} from "react-router-dom";
 import {EmployeeSelect} from "../EmployeeSelect/EmployeeSelect";
-import { AgreementEntity, NewAgreementEntity } from "types";
+import {AgreementEntity, NewAgreementEntity} from "types";
 
 interface Props {
     form: AgreementEntity | NewAgreementEntity;
-    sendForm: ()=>void;
-
-    updateForm: (name: string, value: string | number)=>void;
+    updateForm: (key: string, value: string | number) => void;
     text: string;
 }
+
 export const AgreementForm = (props: Props) => {
 
-    return <form className='add-agreement-container' onSubmit={props.sendForm}>
+    return <>
         <Link to="/agreement" className='links'> ««« powrót </Link>
         <h1 className='form-title'>{props.text}</h1>
         <div className='form-part'>
@@ -184,5 +183,5 @@ export const AgreementForm = (props: Props) => {
             />
         </div>
         <button className='btn-insertion' type='submit'>Zapisz</button>
-    </form>
+    </>
 }

@@ -1,11 +1,11 @@
 .app-container {
-  color: cadetblue;
+    color: cadetblue;
 }
 
 .links {
-  color: cadetblue;
+    color: cadetblue;
 }
 
-.links:hover{
-  color: #2a6164;
+.links:hover {
+    color: #2a6164;
 }

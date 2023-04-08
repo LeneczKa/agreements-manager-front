@@ -2,7 +2,8 @@ import React, {SyntheticEvent, useContext, useState} from "react";
 import {SearchContext} from "../../contexts/search.context";
 
 import './HeadOfList.scss'
-import'../../styles/InsertionBtn.scss'
+import '../../styles/InsertionBtn.scss'
+
 interface Props {
     title: string;
     searchPlaceholder: string;

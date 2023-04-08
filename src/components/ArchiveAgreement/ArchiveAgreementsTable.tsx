@@ -1,5 +1,5 @@
 import React from "react";
-import { SimpleArchiveAgreementEntity } from "types";
+import {SimpleArchiveAgreementEntity} from "types";
 import {ArchiveAgreementTableRow} from "./ArchiveAgreementTableRow";
 
 interface Props {

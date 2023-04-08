@@ -2,9 +2,10 @@ import React, {FormEvent, useState} from "react";
 import {NewEmployeeEntity, EmployeeEntity} from "types";
 import {Spinner} from "../../common/Spinner/Spinner";
 import {capitalizeFirstLowerCaseRest} from "../../utility/common-functions";
+import {apiURL} from "../../config/api";
 
 import './AddEmployee.scss'
-import'../../styles/InsertionBtn.scss'
+import '../../styles/InsertionBtn.scss'
 
 export const AddEmployee = () => {
     const [form, setForm] = useState<NewEmployeeEntity>({
@@ -30,7 +31,7 @@ export const AddEmployee = () => {
         setLoading(true);
 
         try {
-            const res = await fetch(`http://localhost:3001/employee`, {
+            const res = await fetch(`${apiURL}/employee`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

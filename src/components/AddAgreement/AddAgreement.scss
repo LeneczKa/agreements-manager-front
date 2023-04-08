@@ -43,12 +43,14 @@
       }
     }
 
-    .regular-input{
+    .regular-input {
       width: 25%;
     }
+
     .mid-input {
       width: 45%;
     }
+
     .big-input {
       width: 95%;
     }
@@ -81,10 +83,12 @@
       height: content-box;
       border: 1px solid cadetblue;
     }
+
     label {
       font-weight: bolder;
     }
   }
+
   button {
     margin-top: 5px;
     width: 100%;
