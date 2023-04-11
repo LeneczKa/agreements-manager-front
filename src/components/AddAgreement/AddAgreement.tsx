@@ -94,5 +94,7 @@ export const AddAgreement = () => {
         </div>;
     }
 
-    return <AgreementForm form={form} sendForm={() => sendForm} updateForm={() => updateForm} text={'Dodaj zlecenie'}/>
+    return <form className='add-agreement-container' onSubmit={sendForm}>
+        <AgreementForm form={form} updateForm={updateForm} text={'Dodaj zlecenie'}/>
+    </form>
 }

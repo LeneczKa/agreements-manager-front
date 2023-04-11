@@ -3,8 +3,10 @@ import {Spinner} from "../../common/Spinner/Spinner";
 import {Link, useParams} from "react-router-dom";
 import {AgreementEntity} from "types";
 import {AgreementForm} from "../AgreementForm/AgreementForm";
+import {apiURL} from "../../config/api";
 
 import './AddAgreement.scss'
+
 
 export const UpdateAgreement = () => {
     const [form, setForm] = useState<AgreementEntity>({
@@ -38,7 +40,7 @@ export const UpdateAgreement = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/agreement/${idOfAgreement}`);
+            const res = await fetch(`${apiURL}/agreement/${idOfAgreement}`);
             const data = await res.json();
             setForm(data.agreement);
         })();
@@ -53,9 +55,9 @@ export const UpdateAgreement = () => {
         e.preventDefault();
 
         setLoading(true);
-        // const workMode = isUpdated ? 'PATCH' : 'POST';
+
         try {
-            const res = await fetch(`http://localhost:3001/agreement/update/${idOfAgreement}`, {
+            const res = await fetch(`${apiURL}/agreement/update/${idOfAgreement}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -106,5 +108,7 @@ export const UpdateAgreement = () => {
             <p><strong>{resultInfo}</strong></p>
         </div>;
     }
-    return <AgreementForm form={form} updateForm={() => updateForm} sendForm={() => sendForm} text={'Edytuj zlecenie'}/>
+    return <form className='add-agreement-container' onSubmit={sendForm}>
+        <AgreementForm form={form} updateForm={updateForm} text={'Dodaj zlecenie'}/>
+    </form>
 }

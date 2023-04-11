@@ -1,5 +1,6 @@
 import React, {FormEvent, useEffect, useState} from "react";
-import { AgreementEntity, SimpleAgreementEntity } from "types";
+import {AgreementEntity, SimpleAgreementEntity} from "types";
+import {apiURL} from "../../config/api";
 
 import './ArchiveBtn.scss'
 
@@ -9,11 +10,11 @@ interface Props {
 }
 
 export const ArchiveBtn = (props: Props) => {
-const [form, setForm] = useState<AgreementEntity>()
+    const [form, setForm] = useState<AgreementEntity>()
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/agreement/${props.agreement.id}`);
+            const res = await fetch(`${apiURL}/agreement/${props.agreement.id}`);
             const data = await res.json();
             setForm(data.agreement)
         })();
@@ -48,6 +49,7 @@ const [form, setForm] = useState<AgreementEntity>()
         <button className='btn-small'
                 onClick={archiveAgreement}
                 style={btnDisplay}
-        >Archiwizuj</button>
+        >Archiwizuj
+        </button>
     </div>
 }

@@ -1,16 +1,18 @@
 import {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import {SingleAgreementTable} from "../SingleAgreement/SingleAgreementTable";
-import { ArchiveAgreementEntity } from 'types';
+import {ArchiveAgreementEntity} from 'types';
+import {apiURL} from "../../config/api";
 
 import '../SingleAgreement/SingleAgreement.scss'
+
 export const SingleArchiveAgreement = () => {
     const [archiveAgreement, setArchiveAgreement] = useState<ArchiveAgreementEntity | null>(null);
     const {idOfAgreement} = useParams();
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/archive/${idOfAgreement}`);
+            const res = await fetch(`${apiURL}/archive/${idOfAgreement}`);
             const archiveAgreement = await res.json();
             setArchiveAgreement(archiveAgreement);
         })();

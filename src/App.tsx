@@ -8,7 +8,7 @@ import {SingleAgreementView} from "./views/SingleAgreementView";
 import {UpdateAgreementView} from "./views/UpdateAgreementView";
 import {AgreementArchiveView} from "./views/AgreementArchiveView";
 import {SingleArchiveAgreementView} from "./views/SingleArchiveAgreementView";
-import { NotFoundView } from './views/NotFoundView';
+import {NotFoundView} from './views/NotFoundView';
 import {WelcomePageView} from "./views/WelcomePageView";
 
 import './App.css'

@@ -2,6 +2,7 @@ import React, {FormEvent, MouseEventHandler, useState} from 'react';
 import {EmployeeEntity} from 'types';
 import {Spinner} from "../../common/Spinner/Spinner";
 import {capitalizeFirstLowerCaseRest} from "../../utility/common-functions";
+import {apiURL} from "../../config/api";
 
 import "./EmployeesList.scss";
 import '../AddEmployee/AddEmployee.scss';
@@ -34,7 +35,7 @@ export const EmployeeTableRow = (props: Props) => {
         setLoading(true)
 
         try {
-            const res = await fetch(`http://localhost:3001/employee/${props.employee.id}`, {
+            const res = await fetch(`${apiURL}/employee/${props.employee.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +58,7 @@ export const EmployeeTableRow = (props: Props) => {
         if(!window.confirm(`Czy jesteś pewien, że chcesz przenieść ${props.employee.firstName} ${props.employee.lastName} do archiwum?`)) {
             return;
         }
-        const res = await fetch(`http://localhost:3001/employee/${props.employee.id}`, {
+        const res = await fetch(`${apiURL}/employee/${props.employee.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -4,6 +4,7 @@ import {Spinner} from "../../common/Spinner/Spinner";
 import {SearchContext} from "../../contexts/search.context";
 import {AgreementsListOneElement} from "./AgreementsListOneElement";
 import {Link} from "react-router-dom";
+import {apiURL} from "../../config/api";
 
 import './AgreementList.scss'
 
@@ -13,7 +14,7 @@ export const AgreementsList = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`http://localhost:3001/agreement/search/${search}`);
+            const res = await fetch(`${apiURL}/agreement/search/${search}`);
             const agreementsList = await res.json();
             setAgreementsList(agreementsList);
         })();

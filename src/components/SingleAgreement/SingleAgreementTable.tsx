@@ -1,10 +1,11 @@
 import React from "react";
-import { AgreementEntity, ArchiveAgreementEntity } from "types";
+import {AgreementEntity, ArchiveAgreementEntity} from "types";
 
 interface Props {
     agreement: AgreementEntity | ArchiveAgreementEntity,
     title: string,
 }
+
 export const SingleAgreementTable = (props: Props) => {
     return <div className='agreement-main-container'>
         <h2 className='title'>{props.title}</h2>

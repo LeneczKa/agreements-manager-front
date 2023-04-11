@@ -2,7 +2,6 @@ import React from "react";
 import {SimpleArchiveAgreementEntity} from "types";
 import {Link} from "react-router-dom";
 
-import './ArchiveAgreement.scss'
 interface Props {
     archiveAgreement: SimpleArchiveAgreementEntity;
 }
