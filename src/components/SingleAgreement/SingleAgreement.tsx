@@ -12,7 +12,7 @@ export const SingleAgreement = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiURL}/agreement/${idOfAgreement}`);
+            const res = await fetch(`http://localhost:3001/agreement/${idOfAgreement}`);
             const data = await res.json();
             setAgreement(data.agreement);
         })();

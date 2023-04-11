@@ -17,7 +17,7 @@ export const AgreementsListOneElement = (props: Props) => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiURL}/agreement/${props.agreement.id}`);
+            const res = await fetch(`http://localhost:3001/agreement/${props.agreement.id}`);
             const data = await res.json();
             setSuccess(data.amountOfSuccess)
         })();

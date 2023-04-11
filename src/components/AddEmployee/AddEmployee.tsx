@@ -31,7 +31,7 @@ export const AddEmployee = () => {
         setLoading(true);
 
         try {
-            const res = await fetch(`${apiURL}/employee`, {
+            const res = await fetch(`http://localhost:3001/employee`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

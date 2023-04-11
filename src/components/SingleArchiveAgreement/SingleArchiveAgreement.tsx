@@ -12,7 +12,7 @@ export const SingleArchiveAgreement = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiURL}/archive/${idOfAgreement}`);
+            const res = await fetch(`http://localhost:3001/archive/${idOfAgreement}`);
             const archiveAgreement = await res.json();
             setArchiveAgreement(archiveAgreement);
         })();

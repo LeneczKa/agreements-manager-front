@@ -15,7 +15,7 @@ export const EmployeeSelect = (props: Props) => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiURL}/agreement/add`)
+            const res = await fetch(`http://localhost:3001/agreement/add`)
             const employees = await res.json();
             setEmployees(employees)
         })();

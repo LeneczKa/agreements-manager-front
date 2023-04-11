@@ -60,7 +60,7 @@ export const AgreementForm = (props: Props) => {
                        type='text'
                        name='personForContact'
                        required
-                       pattern="^[a-zA-ZąęśćżźńĄĘŚĆŻŹŃ\- ]{2,50}$"
+                       pattern="^[a-zA-ZąęśćżźńłĄĘŚĆŻŹŃŁ\- ]{2,50}$"
                        title='Dane osoby do kontaktu muszą mieć od 2 do 50 znaków'
                        placeholder='Imię i Nazwisko'
                        value={props.form.personForContact}

@@ -13,7 +13,7 @@ export const ArchiveAgreement = () => {
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiURL}/archive/search/${search}`)
+            const res = await fetch(`http://localhost:3001/archive/search/${search}`)
             const archiveAgreementsList = await res.json();
             setArchiveAgreementsList(archiveAgreementsList);
         })();

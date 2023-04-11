@@ -57,7 +57,7 @@ export const UpdateAgreement = () => {
         setLoading(true);
 
         try {
-            const res = await fetch(`${apiURL}/agreement/update/${idOfAgreement}`, {
+            const res = await fetch(`http://localhost:3001/agreement/update/${idOfAgreement}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

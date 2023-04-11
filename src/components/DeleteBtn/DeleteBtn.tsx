@@ -16,7 +16,7 @@ export const DeleteBtn = (props: Props) => {
             return;
         }
 
-        const res = await fetch(`${apiURL}/agreement/${props.agreement.id}`, {
+        const res = await fetch(`http://localhost:3001/agreement/${props.agreement.id}`, {
             method: 'DELETE',
         })
 
