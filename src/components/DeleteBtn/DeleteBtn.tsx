@@ -12,7 +12,7 @@ export const DeleteBtn = (props: Props) => {
     const deleteAgreement = async (e: FormEvent) => {
         e.preventDefault();
 
-        if (!window.confirm(`Czy na pewno chcesz usunąć zlecenie o numerze ${props.agreement.agreementNo}?`)) {
+        if (!window.confirm(`Czy na pewno chcesz usunąć zlecenie dla ${props.agreement.institutionName}?`)) {
             return;
         }
 
